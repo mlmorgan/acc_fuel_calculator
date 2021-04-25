@@ -87,7 +87,7 @@ class Tracks with ChangeNotifier {
       },
     ),
     Track(
-      name: 'Nürburgring',
+      name: 'Nurburgring',
       country: Country.germany,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 52, milliseconds: 680),

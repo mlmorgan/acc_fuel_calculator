@@ -88,10 +88,12 @@ packages:
   flag:
     dependency: "direct main"
     description:
-      name: flag
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.0.0-nullsafety"
+      path: "."
+      ref: HEAD
+      resolved-ref: "79702455d674d11d40ecdb63e02587bf05a5099c"
+      url: "https://github.com/mlmorgan/flag_flutter.git"
+    source: git
+    version: "5.0.0-nullsafety.0"
   flutter:
     dependency: "direct main"
     description: flutter
