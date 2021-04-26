@@ -1,4 +1,5 @@
 import 'package:dropdown_search/dropdown_search.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +51,7 @@ class TrackDropdown extends StatelessWidget {
           if (newTrack != null) {
             tracks.setCurrentTrack(newTrack);
           }
-          FocusScope.of(context).requestFocus(nextFocusNode);
+          if (!kIsWeb) FocusScope.of(context).requestFocus(nextFocusNode);
         },
       ),
     );
@@ -77,7 +78,7 @@ class TrackDropdownMenuItem extends StatelessWidget {
           ),
           Container(
             child: SvgPicture.asset(
-              'images/flags/${track.country.value}.svg',
+              'images/flags/svg/${track.country.value}.svg',
               width: 28,
             ),
             decoration: BoxDecoration(

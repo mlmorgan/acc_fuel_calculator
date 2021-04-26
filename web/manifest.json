@@ -1,11 +1,11 @@
 {
-    "name": "fuel_calculator",
-    "short_name": "fuel_calculator",
+    "name": "ACC Fuel Calculator",
+    "short_name": "Fuel Calc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Fuel calculator for Assetto Corsa Competizione.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
