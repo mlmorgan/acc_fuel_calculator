@@ -85,15 +85,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-  flag:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "79702455d674d11d40ecdb63e02587bf05a5099c"
-      url: "https://github.com/mlmorgan/flag_flutter.git"
-    source: git
-    version: "5.0.0-nullsafety.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -107,12 +98,12 @@ packages:
     source: hosted
     version: "0.9.0"
   flutter_svg:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.21.0+1"
+    version: "0.22.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter

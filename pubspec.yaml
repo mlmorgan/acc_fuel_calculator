@@ -22,12 +22,9 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  # flag: ^5.0.0-nullsafety
-  flag:
-    git:
-      url: https://github.com/mlmorgan/flag_flutter.git
   provider: ^5.0.0
   dropdown_search: ^0.5.0
+  flutter_svg: ^0.22.0
 
 dev_dependencies:
   flutter_test:
@@ -49,7 +46,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - images/flags/
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
