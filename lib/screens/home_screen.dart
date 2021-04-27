@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../widgets/category_selector.dart';
 
 import '../widgets/litres_per_lap_field.dart';
@@ -14,7 +15,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('ACC Fuel Calculator'),
-        leading: Icon(Icons.opacity), //Icons.local_gas_station),
+        leading: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Image.asset(
+            'images/icon/app_icon.png',
+            color: Colors.white,
+          ),
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
