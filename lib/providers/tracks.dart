@@ -23,7 +23,7 @@ class Tracks with ChangeNotifier {
       },
     ),
     Track(
-      name: 'Donnington Park',
+      name: 'Donington Park',
       country: Country.unitedKingdom,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 27, milliseconds: 153),

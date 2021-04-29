@@ -17,8 +17,8 @@ class HomeScreen extends StatelessWidget {
         title: Text('ACC Fuel Calculator'),
         leading: Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Image.asset(
-            'images/icon/app_icon.png',
+          child: SvgPicture.asset(
+            'images/icon/app_icon.svg',
             color: Colors.white,
           ),
         ),

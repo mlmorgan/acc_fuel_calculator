@@ -55,11 +55,11 @@ class MyApp extends StatelessWidget {
         title: 'Fuel Calculator',
         theme: ThemeData(
           brightness: Brightness.light,
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.teal,
         ),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.teal,
         ),
         themeMode: ThemeMode.system,
         home: HomeScreen(),
