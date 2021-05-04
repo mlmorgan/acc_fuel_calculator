@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fuel_calculator/widgets/info_dialog.dart';
 import '../widgets/category_selector.dart';
 
 import '../widgets/litres_per_lap_field.dart';
@@ -22,6 +23,23 @@ class HomeScreen extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.info),
+              onPressed: () {
+                showAboutDialog(
+                    context: context,
+                    applicationName: 'ACC Fuel Calculator',
+                    applicationIcon: Image.asset(
+                      'images/icon/ic_launcher.png',
+                      width: 72,
+                    ),
+                    applicationVersion: '1.0.0',
+                    children: [
+                      InfoDialog(),
+                    ]);
+              })
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

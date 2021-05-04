@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Fuel Calculator',
         theme: ThemeData(
           brightness: Brightness.light,

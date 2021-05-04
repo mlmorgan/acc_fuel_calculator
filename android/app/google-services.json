@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "16751703389",
+    "project_id": "fuel-calculator-fce7c",
+    "storage_bucket": "fuel-calculator-fce7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16751703389:android:97ab10c5ec089f9d5024b4",
+        "android_client_info": {
+          "package_name": "com.mlmorgan.fuel_calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16751703389-2u2v65jinp2kkj9d5q3g250fpvgoj7bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXAE30lnSZMWezR_uTyIJ3AgZ2-yH0Au0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16751703389-2u2v65jinp2kkj9d5q3g250fpvgoj7bq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

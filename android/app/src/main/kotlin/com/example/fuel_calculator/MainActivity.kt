@@ -1,4 +1,4 @@
-package com.example.fuel_calculator
+package com.mlmorgan.fuel_calculator
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
