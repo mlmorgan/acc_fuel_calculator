@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                       'images/icon/ic_launcher.png',
                       width: 72,
                     ),
-                    applicationVersion: '1.0.0',
+                    applicationVersion: '1.1.0',
                     children: [
                       InfoDialog(),
                     ]);
