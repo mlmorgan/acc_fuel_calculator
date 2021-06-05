@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/tracks.dart';
 import '../models/track/track.dart';
+import '../providers/tracks.dart';
 
 class TrackDropdown extends StatelessWidget {
   final FocusNode nextFocusNode;

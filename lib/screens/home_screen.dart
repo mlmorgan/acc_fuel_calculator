@@ -1,78 +1,63 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fuel_calculator/widgets/info_dialog.dart';
-import '../widgets/category_selector.dart';
 
-import '../widgets/litres_per_lap_field.dart';
-import '../widgets/litres_required_widget.dart';
-import '../widgets/stint_length_field.dart';
-import '../widgets/track_dropdown.dart';
+import '../widgets/info_dialog.dart';
+import 'ecu_maps_screen.dart';
+import 'fuel_calculator_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  final stintLengthFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ACC Fuel Calculator'),
-        leading: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: SvgPicture.asset(
-            'images/icon/app_icon.svg',
-            color: Colors.white,
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('ACC Fuel Calculator'),
+          leading: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: SvgPicture.asset(
+              'images/icon/app_icon.svg',
+              color: Colors.white,
+            ),
           ),
-        ),
-        actions: [
-          IconButton(
+          actions: [
+            IconButton(
               icon: Icon(Icons.info),
               onPressed: () {
                 showAboutDialog(
-                    context: context,
-                    applicationName: 'ACC Fuel Calculator',
-                    applicationIcon: Image.asset(
-                      'images/icon/ic_launcher.png',
-                      width: 72,
-                    ),
-                    applicationVersion: '1.1.0',
-                    children: [
-                      InfoDialog(),
-                    ]);
-              })
-        ],
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-                CategorySelector(),
-                SizedBox(height: 16),
-                TrackDropdown(
-                  nextFocusNode: stintLengthFocusNode,
-                ),
-                // SizedBox(
-                //   height: 16,
-                // ),
-                // CarDropdown(),
-                SizedBox(height: 12),
-                Row(
+                  context: context,
+                  applicationName: 'ACC Fuel Calculator',
+                  applicationIcon: Image.asset(
+                    'images/icon/ic_launcher.png',
+                    width: 72,
+                  ),
+                  applicationVersion: '1.0.0',
                   children: [
-                    Expanded(
-                        child: StintLengthField(
-                      focusNode: stintLengthFocusNode,
-                    )),
-                    SizedBox(width: 8),
-                    Expanded(child: LitresPerLapField()),
+                    InfoDialog(),
                   ],
-                ),
-                // SizedBox(height: 16),
-                SizedBox(height: 32),
-                LitresRequiredWidget(),
-              ],
-            ),
+                );
+              },
+            )
+          ],
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'FUEL CALCULATOR'),
+              Tab(text: 'ECU MAPS'),
+            ],
           ),
+          // titleSpacing: 0,
+          // title: TabBar(
+          //   tabs: [
+          //     Tab(text: 'FUEL CALCULATOR'),
+          //     Tab(text: 'ECU MAPS'),
+          //   ],
+          // ),
+        ),
+        body: TabBarView(
+          children: [
+            FuelCalculatorScreen(),
+            EcuMapsScreen(),
+          ],
         ),
       ),
     );
