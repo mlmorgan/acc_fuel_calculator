@@ -11,27 +11,32 @@ class _HelpScreenState extends State<HelpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        child: ExpansionPanelList(
-          expansionCallback: (int index, bool isExpanded) {
-            setState(() {
-              _helpSections[index].isExpanded = !isExpanded;
-            });
-          },
-          children: HelpSection.helpSections
-              .map(
-                (section) => ExpansionPanel(
-                  headerBuilder: (BuildContext context, bool isExpanded) {
-                    return ListTile(
-                      title: Text(section.header),
-                    );
-                  },
-                  body: ListTile(title: section.body),
-                  isExpanded: section.isExpanded,
-                ),
-              )
-              .toList(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Help'),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          child: ExpansionPanelList(
+            expansionCallback: (int index, bool isExpanded) {
+              setState(() {
+                _helpSections[index].isExpanded = !isExpanded;
+              });
+            },
+            children: HelpSection.helpSections
+                .map(
+                  (section) => ExpansionPanel(
+                    headerBuilder: (BuildContext context, bool isExpanded) {
+                      return ListTile(
+                        title: Text(section.header),
+                      );
+                    },
+                    body: ListTile(title: section.body),
+                    isExpanded: section.isExpanded,
+                  ),
+                )
+                .toList(),
+          ),
         ),
       ),
     );

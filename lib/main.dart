@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import 'providers/cars.dart';
 import 'providers/category.dart';
+import 'providers/ecu_profiles.dart';
 import 'providers/litres_per_lap.dart';
 import 'providers/litres_required.dart';
 import 'providers/race_length.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
-          value: Cars(),
+          value: EcuProfiles(),
         ),
         ChangeNotifierProvider.value(
           value: Tracks(),
@@ -53,7 +53,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Fuel Calculator',
         theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: Colors.teal,

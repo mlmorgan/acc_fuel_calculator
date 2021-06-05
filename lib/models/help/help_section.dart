@@ -72,9 +72,9 @@ class HelpSection {
         TextSpan(
           children: [
             TextSpan(
-              text:
-                  'You will have lower fuel consumption on a wet track due to the slower average speed. Make sure you take this into account if there are different conditions across sessions.\n\nIf the track is dry across sessions, you will have slightly higher fuel consumption as the race weekend goes on as the track rubbers in and gets faster.\n',
-            ),
+                text:
+                    'You will generally have lower fuel consumption on a wet track due to the slower average speed. Make sure you take this into account if there are different conditions across sessions.\n' //\n\nIf the track is dry across sessions, you will have slightly higher fuel consumption as the race weekend goes on as the track rubbers in and gets faster.\n',
+                ),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-import '../models/car/car.dart';
 import '../models/car/brand.dart';
+import '../models/car/car.dart';
 import '../models/car/group.dart';
 
 class Cars with ChangeNotifier {
