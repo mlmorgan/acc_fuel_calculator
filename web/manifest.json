@@ -1,11 +1,11 @@
 {
-    "name": "ACC Fuel Calculator",
-    "short_name": "ACC Fuel Calculator",
+    "name": "Assetto Corsa Competizione Tools",
+    "short_name": "ACC Toolbox",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#009688",
     "theme_color": "#4CAF50",
-    "description": "Fuel calculator for Assetto Corsa Competizione.",
+    "description": "Tools for Assetto Corsa Competizione.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
