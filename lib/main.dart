@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        title: 'ACC Toolbox',
         theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: Colors.teal,
