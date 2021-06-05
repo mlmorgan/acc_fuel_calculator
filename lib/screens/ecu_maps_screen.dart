@@ -37,7 +37,7 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
                                 ecuProfiles.currentEcuProfile!.groups[index]),
                       );
                     },
-                    childCount: 3,
+                    childCount: ecuProfiles.currentEcuProfile!.groups.length,
                   ),
                 )
               : SliverToBoxAdapter(

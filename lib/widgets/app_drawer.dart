@@ -15,24 +15,27 @@ class AppDrawer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.teal,
             ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  'images/icon/app_icon.svg',
-                  height: 64,
-                  alignment: Alignment.center,
-                ),
-                SizedBox(width: 32),
-                Text(
-                  'ACC Toolbox',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 28,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'images/icon/app_icon.svg',
+                    height: 64,
+                    alignment: Alignment.center,
                   ),
-                ),
-              ],
+                  SizedBox(width: 32),
+                  Text(
+                    'ACC\nToolbox',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           ListTile(
