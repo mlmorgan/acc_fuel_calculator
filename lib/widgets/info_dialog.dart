@@ -34,6 +34,30 @@ class InfoDialog extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
+                text: 'ECU map information from ',
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+              TextSpan(
+                text: "Aristotelis' post",
+                style: TextStyle(color: Colors.blue),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    launch(
+                        'https://www.assettocorsa.net/forum/index.php?threads/ecu-maps-implementation.54472/');
+                  },
+              ),
+              TextSpan(
+                text: ' on the Assetto Corsa forum.',
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 8),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
                 text: 'Helmet outline icon made by ',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
