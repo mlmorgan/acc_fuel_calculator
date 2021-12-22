@@ -107,7 +107,7 @@ class EcuProfiles with ChangeNotifier {
       ],
     ),
     EcuProfile(
-      name: 'BMW M6',
+      name: 'BMW',
       groups: [
         EcuMapGroup(
           name: 'Dry',
