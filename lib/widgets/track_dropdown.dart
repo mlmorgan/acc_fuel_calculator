@@ -25,8 +25,10 @@ class TrackDropdown extends StatelessWidget {
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: tracks.tracks,
-        autoFocusSearchBox: true,
-        dropdownBuilder: (context, Track? track, designation) {
+        searchFieldProps: TextFieldProps(
+          autofocus: true
+        ),
+        dropdownBuilder: (context, Track? track) {
           return track != null
               ? TrackDropdownMenuItem(
                   track: track,

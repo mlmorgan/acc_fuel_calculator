@@ -20,8 +20,10 @@ class EcuProfileDropdown extends StatelessWidget {
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: ecuProfiles.ecuProfiles,
-        autoFocusSearchBox: true,
-        dropdownBuilder: (context, EcuProfile? ecuProfile, designation) {
+        searchFieldProps: TextFieldProps(
+          autofocus: true
+        ),
+        dropdownBuilder: (context, EcuProfile? ecuProfile) {
           return ecuProfile != null
               ? EcuProfileDropdownMenuItem(
                   ecuProfile: ecuProfile,

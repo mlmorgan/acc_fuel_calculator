@@ -19,8 +19,10 @@ class CarDropdown extends StatelessWidget {
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: cars.cars,
-        autoFocusSearchBox: true,
-        dropdownBuilder: (context, Car? car, designation) {
+        searchFieldProps: TextFieldProps(
+          autofocus: true
+        ),
+        dropdownBuilder: (context, Car? car) {
           return car != null
               ? CarDropdownMenuItem(
                   car: car,
