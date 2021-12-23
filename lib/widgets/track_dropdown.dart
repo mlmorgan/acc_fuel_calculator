@@ -19,14 +19,23 @@ class TrackDropdown extends StatelessWidget {
 
     return Consumer<Tracks>(
       builder: (ctx, tracks, _) => DropdownSearch<Track>(
-        label: 'Track',
-        mode: useMobileLayout ? Mode.BOTTOM_SHEET : Mode.DIALOG,
+        mode: useMobileLayout ? Mode.MENU : Mode.DIALOG,
         showSearchBox: true,
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: tracks.tracks,
+        dropdownSearchDecoration: InputDecoration(
+          labelText: 'Track',
+          contentPadding: const EdgeInsets.only(
+            top: 4.0,
+            bottom: 4.0,
+            left: 12.0,
+            right: 0.0,
+          ),
+          border: const OutlineInputBorder(),
+        ),
         searchFieldProps: TextFieldProps(
-          autofocus: true
+          autofocus: true,
         ),
         dropdownBuilder: (context, Track? track) {
           return track != null
@@ -46,8 +55,7 @@ class TrackDropdown extends StatelessWidget {
               : SizedBox();
         },
         itemAsString: (Track? track) {
-          if (track != null) return track.name;
-          return '';
+          return (track != null) ? track.name : '';
         },
         onChanged: (Track? newTrack) {
           if (newTrack != null) {

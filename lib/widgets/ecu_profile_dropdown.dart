@@ -14,14 +14,23 @@ class EcuProfileDropdown extends StatelessWidget {
     return Consumer<EcuProfiles>(
       builder: (ctx, ecuProfiles, _) => DropdownSearch<EcuProfile>(
         selectedItem: ecuProfiles.currentEcuProfile,
-        label: 'Car',
-        mode: useMobileLayout ? Mode.BOTTOM_SHEET : Mode.DIALOG,
+        mode: useMobileLayout ? Mode.MENU : Mode.DIALOG,
         showSearchBox: true,
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: ecuProfiles.ecuProfiles,
+        dropdownSearchDecoration: InputDecoration(
+          labelText: 'Car',
+          contentPadding: const EdgeInsets.only(
+            top: 4.0,
+            bottom: 4.0,
+            left: 12.0,
+            right: 0.0,
+          ),
+          border: const OutlineInputBorder(),
+        ),
         searchFieldProps: TextFieldProps(
-          autofocus: true
+          autofocus: true,
         ),
         dropdownBuilder: (context, EcuProfile? ecuProfile) {
           return ecuProfile != null
@@ -41,8 +50,7 @@ class EcuProfileDropdown extends StatelessWidget {
               : SizedBox();
         },
         itemAsString: (EcuProfile? ecuProfile) {
-          if (ecuProfile != null) return ecuProfile.name;
-          return '';
+          return (ecuProfile != null) ? ecuProfile.name : '';
         },
         onChanged: (EcuProfile? newEcuProfile) {
           if (newEcuProfile != null) {
