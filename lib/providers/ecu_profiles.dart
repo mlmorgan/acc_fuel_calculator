@@ -1,10 +1,25 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/ecu_profile/ecu_profile.dart';
 import '../util/constants.dart';
 
 class EcuProfiles with ChangeNotifier {
+
+  final sharedPrefKey = 'ecuProfile';
+
+  Future<void> getEcuProfileFromPersistence() async {
+    final prefs = await SharedPreferences.getInstance();
+    final ecuProfileName = prefs.getString(sharedPrefKey);
+    if (ecuProfileName != null) {
+      final ecuProfile = _ecuProfiles.firstWhere((element) {
+        return element.name == ecuProfileName;
+      });
+      await setCurrentEcuProfile(ecuProfile);
+    }
+  }
+
   final _ecuProfiles = [
     EcuProfile(
       name: 'Aston Martin Vantage',
@@ -107,7 +122,7 @@ class EcuProfiles with ChangeNotifier {
       ],
     ),
     EcuProfile(
-      name: 'BMW M6',
+      name: 'BMW',
       groups: [
         EcuMapGroup(
           name: 'Dry',
@@ -513,8 +528,11 @@ class EcuProfiles with ChangeNotifier {
     return _currentEcuProfile;
   }
 
-  void setCurrentEcuProfile(EcuProfile newEcuProfile) {
+  Future<void> setCurrentEcuProfile(EcuProfile newEcuProfile) async {
     _currentEcuProfile = newEcuProfile;
     notifyListeners();
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(sharedPrefKey, newEcuProfile.name);
   }
 }

@@ -1,5 +1,4 @@
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,14 +13,16 @@ class CarDropdown extends StatelessWidget {
 
     return Consumer<Cars>(
       builder: (ctx, cars, _) => DropdownSearch<Car>(
-        label: 'Car',
+        // label: 'Car',
         mode: useMobileLayout ? Mode.BOTTOM_SHEET : Mode.DIALOG,
         showSearchBox: true,
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: cars.cars,
-        autoFocusSearchBox: true,
-        dropdownBuilder: (context, Car? car, designation) {
+        searchFieldProps: TextFieldProps(
+          autofocus: true
+        ),
+        dropdownBuilder: (context, Car? car) {
           return car != null
               ? CarDropdownMenuItem(
                   car: car,

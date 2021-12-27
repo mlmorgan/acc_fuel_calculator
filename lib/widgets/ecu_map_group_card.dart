@@ -29,29 +29,6 @@ class EcuMapGroupCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            // child: Column(
-            //   children: List.generate(
-            //     ecuMapGroup.maps.length,
-            //     (index) => Column(
-            //       children: [
-            //         Row(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //           children: [
-            //             Text(
-            //               ecuMapGroup.maps[index].number.toString(),
-            //               style: Theme.of(context).textTheme.subtitle2,
-            //             ),
-            //             SizedBox(width: 8),
-            //             Expanded(
-            //                 child: Text(ecuMapGroup.maps[index].description)),
-            //           ],
-            //         ),
-            //         Divider(),
-            //       ],
-            //     ),
-            //   ),
-            // ),
             child: ListView.separated(
               itemBuilder: (context, index) => Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

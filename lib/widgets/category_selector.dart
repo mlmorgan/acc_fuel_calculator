@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/car/group.dart';
@@ -17,7 +16,6 @@ class CategorySelector extends StatelessWidget {
       return Container(
         width: double.infinity,
         child: CupertinoSlidingSegmentedControl(
-          // backgroundColor: Theme.of(context).primaryColorLight,
           groupValue: category.category,
           children: myTabs,
           onValueChanged: (Group? newCategory) {
