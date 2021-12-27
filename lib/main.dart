@@ -87,7 +87,11 @@ class MyApp extends StatelessWidget {
             ),
           );
         } else {
-          return MaterialApp();
+          return MaterialApp(
+            home: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
         }
       },
     );
