@@ -13,7 +13,7 @@ class CarDropdown extends StatelessWidget {
 
     return Consumer<Cars>(
       builder: (ctx, cars, _) => DropdownSearch<Car>(
-        label: 'Car',
+        // label: 'Car',
         mode: useMobileLayout ? Mode.BOTTOM_SHEET : Mode.DIALOG,
         showSearchBox: true,
         searchDelay: Duration(milliseconds: 0),

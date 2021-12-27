@@ -1,10 +1,25 @@
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/car/group.dart';
 import '../models/track/country.dart';
 import '../models/track/track.dart';
 
 class Tracks with ChangeNotifier {
+
+  final sharedPrefKey = 'track';
+
+  Future<void> getTrackFromPersistence() async {
+    final prefs = await SharedPreferences.getInstance();
+    final trackName = prefs.getString(sharedPrefKey);
+    if (trackName != null) {
+      final track = _tracks.firstWhere((element) {
+        return element.name == trackName;
+      });
+      setCurrentTrack(track);
+    }
+  }
+
   final _tracks = [
     Track(
       name: 'Barcelona',
@@ -170,8 +185,11 @@ class Tracks with ChangeNotifier {
     return _currentTrack;
   }
 
-  void setCurrentTrack(Track newTrack) {
+  Future<void> setCurrentTrack(Track newTrack) async {
     _currentTrack = newTrack;
     notifyListeners();
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(sharedPrefKey, newTrack.name);
   }
 }

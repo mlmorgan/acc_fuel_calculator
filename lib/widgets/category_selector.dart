@@ -16,7 +16,6 @@ class CategorySelector extends StatelessWidget {
       return Container(
         width: double.infinity,
         child: CupertinoSlidingSegmentedControl(
-          // backgroundColor: Theme.of(context).primaryColorLight,
           groupValue: category.category,
           children: myTabs,
           onValueChanged: (Group? newCategory) {

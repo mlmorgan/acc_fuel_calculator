@@ -20,9 +20,6 @@ class LitresRequiredWidget extends StatelessWidget {
             litresRequired.recommended.toString(),
             style: Theme.of(context).textTheme.headline1,
           ),
-          // SizedBox(
-          //   height: 16,
-          // ),
           Divider(
             thickness: 1,
           ),
@@ -30,7 +27,6 @@ class LitresRequiredWidget extends StatelessWidget {
             height: 24,
           ),
           Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Expanded(
                 child: SmallLitresRequiredColumn(

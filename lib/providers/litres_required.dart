@@ -26,22 +26,6 @@ class LitresRequired {
     return null;
   }
 
-  // int get litresRequired {
-  //   if ((track != null) && (raceLength != null) && (litresPerLap != null)) {
-  //     final raceLengthMilliseconds =
-  //         Duration(minutes: raceLength!).inMilliseconds;
-  //     final lapTimeMilliseconds = track!.records[category]!.inMilliseconds;
-  //     final safeLapTimeMilliseconds = lapTimeMilliseconds;
-
-  //     final litresRequired =
-  //         ((raceLengthMilliseconds / safeLapTimeMilliseconds) + 3) *
-  //             litresPerLap!;
-
-  //     return litresRequired.ceil();
-  //   }
-  //   return 0;
-  // }
-
   int get recommended {
     if (estimatedLaps != null) {
       return ((estimatedLaps! + 1) * litresPerLap!).ceil();

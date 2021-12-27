@@ -20,57 +20,76 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  final category = Category();
+  final tracks = Tracks();
+  final raceLength = RaceLength();
+  final litresPerLap = LitresPerLap();
+  final ecuProfiles = EcuProfiles();
+
+  Future<void> getAllDataFromPersistence() async {
+    final futures = [
+      category.getCategoryFromPersistence(),
+      tracks.getTrackFromPersistence(),
+      raceLength.getRacelengthFromPersistence(),
+      litresPerLap.getLitresPerLapFromPersistence(),
+      ecuProfiles.getEcuProfileFromPersistence(),      
+    ];
+    await Future.wait(futures);
+  }
+
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitUp,
-    //   DeviceOrientation.portraitDown,
-    // ]);
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(
-          value: EcuProfiles(),
-        ),
-        ChangeNotifierProvider.value(
-          value: Tracks(),
-        ),
-        ChangeNotifierProvider.value(
-          value: RaceLength(),
-        ),
-        ChangeNotifierProvider.value(
-          value: LitresPerLap(),
-        ),
-        ChangeNotifierProvider.value(
-          value: Category(),
-        ),
-        // ChangeNotifierProvider.value(
-        //   value: LitresRequired(),
-        // ),
-        ProxyProvider4<Category, Tracks, RaceLength, LitresPerLap,
-            LitresRequired>(
-          update:
-              (context, category, tracks, raceLength, litresPerLap, previous) {
-            return LitresRequired(
-                category: category.category,
-                track: tracks.currentTrack,
-                raceLength: raceLength.raceLength,
-                litresPerLap: litresPerLap.litresPerLap);
-          },
-        ),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primarySwatch: Colors.teal,
-        ),
-        darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          primarySwatch: Colors.teal,
-        ),
-        themeMode: ThemeMode.system,
-        home: HomeScreen(),
-      ),
+    return FutureBuilder(
+      future: getAllDataFromPersistence(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MultiProvider(
+            providers: [
+              ChangeNotifierProvider.value(
+                value: ecuProfiles,
+              ),
+              ChangeNotifierProvider.value(
+                value: tracks,
+              ),
+              ChangeNotifierProvider.value(
+                value: raceLength,
+              ),
+              ChangeNotifierProvider.value(
+                value: litresPerLap,
+              ),
+              ChangeNotifierProvider.value(
+                value: category,
+              ),
+              ProxyProvider4<Category, Tracks, RaceLength, LitresPerLap,
+                  LitresRequired>(
+                update: (context, category, tracks, raceLength, litresPerLap,
+                    previous) {
+                  return LitresRequired(
+                      category: category.category,
+                      track: tracks.currentTrack,
+                      raceLength: raceLength.raceLength,
+                      litresPerLap: litresPerLap.litresPerLap);
+                },
+              ),
+            ],
+            child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                brightness: Brightness.light,
+                primarySwatch: Colors.teal,
+              ),
+              darkTheme: ThemeData(
+                brightness: Brightness.dark,
+                primarySwatch: Colors.teal,
+              ),
+              themeMode: ThemeMode.system,
+              home: HomeScreen(),
+            ),
+          );
+        } else {
+          return MaterialApp();
+        }
+      },
     );
   }
 }

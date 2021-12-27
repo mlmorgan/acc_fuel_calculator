@@ -19,6 +19,7 @@ class TrackDropdown extends StatelessWidget {
 
     return Consumer<Tracks>(
       builder: (ctx, tracks, _) => DropdownSearch<Track>(
+        selectedItem: tracks.currentTrack,
         mode: useMobileLayout ? Mode.MENU : Mode.DIALOG,
         showSearchBox: true,
         searchDelay: Duration(milliseconds: 0),

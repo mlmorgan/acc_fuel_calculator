@@ -8,15 +8,13 @@ class LitresPerLapField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final initialValue = context.read<LitresPerLap>().litresPerLap;
+    if (initialValue != null) {
+      _textFieldController.text = initialValue.toString();
+    }
+
     return Consumer<LitresPerLap>(
       builder: (ctx, litresPerLap, _) {
-        // if (litresPerLap.litresPerLap == 0) {
-        //   _textFieldController.text = '';
-        // } else {
-        //   _textFieldController.text = litresPerLap.litresPerLap.toString();
-        // }
-        //
-
         return Column(
           children: [
             TextField(
@@ -31,44 +29,6 @@ class LitresPerLapField extends StatelessWidget {
                 litresPerLap.setLitresPerLap(double.tryParse(newValue) ?? 0);
               },
             ),
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: ElevatedButton(
-            //         onPressed: () {
-            //           litresPerLap
-            //               .setLitresPerLap(litresPerLap.litresPerLap + 1);
-            //         },
-            //         child: Text("+ 1"),
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       width: 8,
-            //     ),
-            //     Expanded(
-            //       child: ElevatedButton(
-            //         onPressed: () {
-            //           litresPerLap
-            //               .setLitresPerLap(litresPerLap.litresPerLap + 0.1);
-            //         },
-            //         child: Text("+ 0.1"),
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       width: 8,
-            //     ),
-            //     Expanded(
-            //       child: ElevatedButton(
-            //         onPressed: () {
-            //           litresPerLap
-            //               .setLitresPerLap(litresPerLap.litresPerLap + 0.01);
-            //         },
-            //         child: Text("+ 0.01"),
-            //       ),
-            //     ),
-            //   ],
-            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            // ),
           ],
         );
       },
