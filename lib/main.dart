@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 import 'providers/category.dart';
 import 'providers/ecu_profiles.dart';
@@ -16,6 +17,10 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  final analytics = FirebaseAnalytics.instance;
+  analytics.logAppOpen();
+
   runApp(MyApp());
 }
 
@@ -32,7 +37,7 @@ class MyApp extends StatelessWidget {
       tracks.getTrackFromPersistence(),
       raceLength.getRacelengthFromPersistence(),
       litresPerLap.getLitresPerLapFromPersistence(),
-      ecuProfiles.getEcuProfileFromPersistence(),      
+      ecuProfiles.getEcuProfileFromPersistence(),
     ];
     await Future.wait(futures);
   }
@@ -73,6 +78,7 @@ class MyApp extends StatelessWidget {
               ),
             ],
             child: MaterialApp(
+              navigatorObservers: [],
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 brightness: Brightness.light,
