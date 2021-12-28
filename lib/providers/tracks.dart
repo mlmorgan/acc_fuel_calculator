@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 import '../models/car/group.dart';
 import '../models/track/country.dart';
@@ -7,11 +8,13 @@ import '../models/track/track.dart';
 
 class Tracks with ChangeNotifier {
 
-  final sharedPrefKey = 'track';
+  final _sharedPrefKey = 'track';
+  final _analytics = FirebaseAnalytics.instance;
+
 
   Future<void> getTrackFromPersistence() async {
     final prefs = await SharedPreferences.getInstance();
-    final trackName = prefs.getString(sharedPrefKey);
+    final trackName = prefs.getString(_sharedPrefKey);
     if (trackName != null) {
       final track = _tracks.firstWhere((element) {
         return element.name == trackName;
@@ -190,6 +193,11 @@ class Tracks with ChangeNotifier {
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(sharedPrefKey, newTrack.name);
+    await prefs.setString(_sharedPrefKey, newTrack.name);
+
+    _analytics.logEvent(
+      name: "select_track",
+      parameters: {"track": newTrack.name},
+    );
   }
 }

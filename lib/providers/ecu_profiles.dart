@@ -1,17 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 import '../models/ecu_profile/ecu_profile.dart';
 import '../util/constants.dart';
 
 class EcuProfiles with ChangeNotifier {
-
-  final sharedPrefKey = 'ecuProfile';
+  final _sharedPrefKey = 'ecuProfile';
+  final _analytics = FirebaseAnalytics.instance;
 
   Future<void> getEcuProfileFromPersistence() async {
     final prefs = await SharedPreferences.getInstance();
-    final ecuProfileName = prefs.getString(sharedPrefKey);
+    final ecuProfileName = prefs.getString(_sharedPrefKey);
     if (ecuProfileName != null) {
       final ecuProfile = _ecuProfiles.firstWhere((element) {
         return element.name == ecuProfileName;
@@ -533,6 +534,11 @@ class EcuProfiles with ChangeNotifier {
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(sharedPrefKey, newEcuProfile.name);
+    await prefs.setString(_sharedPrefKey, newEcuProfile.name);
+
+    _analytics.logEvent(
+      name: "select_ecu_profile",
+      parameters: {"ecu_profile": newEcuProfile.name},
+    );
   }
 }

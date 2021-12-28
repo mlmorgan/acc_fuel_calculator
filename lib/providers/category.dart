@@ -1,15 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 import '../models/car/group.dart';
 
 class Category with ChangeNotifier {
   Group _category = Group.gt3;
-  final sharedPrefKey = 'category';
+  final _sharedPrefKey = 'category';
+  final _analytics = FirebaseAnalytics.instance;
 
   Future<void> getCategoryFromPersistence() async {
     final prefs = await SharedPreferences.getInstance();
-    final rawCategory = prefs.getString(sharedPrefKey);
+    final rawCategory = prefs.getString(_sharedPrefKey);
     if (rawCategory != null) {
       switch (rawCategory) {
         case 'GT3':
@@ -31,6 +33,11 @@ class Category with ChangeNotifier {
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(sharedPrefKey, newCategory.value);
+    await prefs.setString(_sharedPrefKey, newCategory.value);
+
+    _analytics.logEvent(
+      name: "select_category",
+      parameters: {"category": newCategory.value},
+    );
   }
 }
