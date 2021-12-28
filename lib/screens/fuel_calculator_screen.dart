@@ -8,6 +8,8 @@ import '../widgets/stint_length_field.dart';
 import '../widgets/track_dropdown.dart';
 
 class FuelCalculatorScreen extends StatefulWidget {
+  static const screenName = "fuel_calculator";
+  
   @override
   _FuelCalculatorScreenState createState() => _FuelCalculatorScreenState();
 }

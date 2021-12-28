@@ -6,6 +6,8 @@ import '../widgets/ecu_map_group_card.dart';
 import '../widgets/ecu_profile_dropdown.dart';
 
 class EcuMapsScreen extends StatefulWidget {
+  static const screenName = "ecu_maps";
+  
   @override
   _EcuMapsScreenState createState() => _EcuMapsScreenState();
 }

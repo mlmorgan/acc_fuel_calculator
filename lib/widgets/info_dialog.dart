@@ -1,10 +1,20 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 class InfoDialog extends StatelessWidget {
+  static const screenName = "info_dialog";
+  final _analytics = FirebaseAnalytics.instance;
+
   @override
   Widget build(BuildContext context) {
+    
+    _analytics.logScreenView(
+      screenClass: InfoDialog.screenName,
+      screenName: InfoDialog.screenName,
+    );
+
     return Column(
       children: [
         RichText(
