@@ -29,6 +29,13 @@
             {
               "client_id": "16751703389-2u2v65jinp2kkj9d5q3g250fpvgoj7bq.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "16751703389-2kdu6pvod4gdk20lq24krqojr7ieulva.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mlmorgan.fuel-calculator"
+              }
             }
           ]
         }
