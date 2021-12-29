@@ -64,7 +64,7 @@ class AppDrawer extends StatelessWidget {
               'images/icon/ic_launcher.png',
               width: 72,
             ),
-            applicationVersion: '1.2.1',
+            applicationVersion: '1.2.2',
             aboutBoxChildren: [
               InfoDialog(),
             ],
