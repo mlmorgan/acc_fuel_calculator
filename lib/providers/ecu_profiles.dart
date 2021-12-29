@@ -23,7 +23,7 @@ class EcuProfiles with ChangeNotifier {
 
   final _ecuProfiles = [
     EcuProfile(
-      name: 'Aston Martin Vantage',
+      name: 'Aston Martin Vantage V8/V12',
       groups: [
         EcuMapGroup(
           name: 'Dry',
@@ -123,7 +123,7 @@ class EcuProfiles with ChangeNotifier {
       ],
     ),
     EcuProfile(
-      name: 'BMW',
+      name: 'BMW M4/M6',
       groups: [
         EcuMapGroup(
           name: 'Dry',
@@ -270,7 +270,7 @@ class EcuProfiles with ChangeNotifier {
       ],
     ),
     EcuProfile(
-      name: 'Lamborghini Gallardo',
+      name: 'Reiter Engineering R-EX',
       groups: [
         EcuMapGroup(
           name: 'Dry',
