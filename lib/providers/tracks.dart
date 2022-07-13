@@ -41,7 +41,7 @@ class Tracks with ChangeNotifier {
       },
     ),
     Track(
-      name: 'COTA',
+      name: 'Circuit of the Americas',
       country: Country.usa,
       records: {
         Group.gt3: Duration(minutes: 2, seconds: 5, milliseconds: 437),
