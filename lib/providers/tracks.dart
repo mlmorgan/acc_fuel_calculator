@@ -41,6 +41,14 @@ class Tracks with ChangeNotifier {
       },
     ),
     Track(
+      name: 'COTA',
+      country: Country.usa,
+      records: {
+        Group.gt3: Duration(minutes: 2, seconds: 5, milliseconds: 437),
+        Group.gt4: Duration(minutes: 2, seconds: 17, milliseconds: 950),
+      },
+    ),
+    Track(
       name: 'Donington Park',
       country: Country.unitedKingdom,
       records: {
@@ -62,6 +70,14 @@ class Tracks with ChangeNotifier {
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 40, milliseconds: 762),
         Group.gt4: Duration(minutes: 1, seconds: 49, milliseconds: 920),
+      },
+    ),
+    Track(
+      name: 'Indianapolis',
+      country: Country.usa,
+      records: {
+        Group.gt3: Duration(minutes: 1, seconds: 36, milliseconds: 75),
+        Group.gt4: Duration(minutes: 1, seconds: 43, milliseconds: 919),
       },
     ),
     Track(
@@ -158,6 +174,14 @@ class Tracks with ChangeNotifier {
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 58, milliseconds: 877),
         Group.gt4: Duration(minutes: 2, seconds: 10, milliseconds: 192),
+      },
+    ),
+    Track(
+      name: 'Watkins Glen',
+      country: Country.usa,
+      records: {
+        Group.gt3: Duration(minutes: 1, seconds: 44, milliseconds: 287),
+        Group.gt4: Duration(minutes: 1, seconds: 56, milliseconds: 316),
       },
     ),
     Track(
