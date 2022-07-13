@@ -29,7 +29,7 @@ class Tracks with ChangeNotifier {
       country: Country.spain,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 42, milliseconds: 906),
-        Group.gt4: Duration(minutes: 1, seconds: 53, milliseconds: 400),
+        Group.gt4: Duration(minutes: 1, seconds: 52, milliseconds: 542),
       },
     ),
     Track(
@@ -37,7 +37,7 @@ class Tracks with ChangeNotifier {
       country: Country.unitedKingdom,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 22, milliseconds: 285),
-        Group.gt4: Duration(minutes: 1, seconds: 30, milliseconds: 837),
+        Group.gt4: Duration(minutes: 1, seconds: 30, milliseconds: 927),
       },
     ),
     Track(
@@ -45,7 +45,7 @@ class Tracks with ChangeNotifier {
       country: Country.unitedKingdom,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 25, milliseconds: 642),
-        Group.gt4: Duration(minutes: 1, seconds: 35, milliseconds: 949),
+        Group.gt4: Duration(minutes: 1, seconds: 33, milliseconds: 977),
       },
     ),
     Track(
@@ -53,7 +53,7 @@ class Tracks with ChangeNotifier {
       country: Country.hungary,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 41, milliseconds: 895),
-        Group.gt4: Duration(minutes: 1, seconds: 51, milliseconds: 729),
+        Group.gt4: Duration(minutes: 1, seconds: 52, milliseconds: 332),
       },
     ),
     Track(
@@ -61,7 +61,7 @@ class Tracks with ChangeNotifier {
       country: Country.italy,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 40, milliseconds: 762),
-        Group.gt4: Duration(minutes: 1, seconds: 49, milliseconds: 749),
+        Group.gt4: Duration(minutes: 1, seconds: 49, milliseconds: 920),
       },
     ),
     Track(
@@ -69,7 +69,7 @@ class Tracks with ChangeNotifier {
       country: Country.southAfrica,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 39, milliseconds: 902),
-        Group.gt4: Duration(minutes: 1, seconds: 50, milliseconds: 103),
+        Group.gt4: Duration(minutes: 1, seconds: 49, milliseconds: 610),
       },
     ),
     Track(
@@ -77,7 +77,7 @@ class Tracks with ChangeNotifier {
       country: Country.usa,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 21, milliseconds: 202),
-        Group.gt4: Duration(minutes: 1, seconds: 29, milliseconds: 670),
+        Group.gt4: Duration(minutes: 1, seconds: 29, milliseconds: 387),
       },
     ),
     Track(
@@ -85,7 +85,7 @@ class Tracks with ChangeNotifier {
       country: Country.italy,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 32, milliseconds: 860),
-        Group.gt4: Duration(minutes: 1, seconds: 41, milliseconds: 739),
+        Group.gt4: Duration(minutes: 1, seconds: 41, milliseconds: 775),
       },
     ),
     Track(
@@ -93,7 +93,7 @@ class Tracks with ChangeNotifier {
       country: Country.italy,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 47, milliseconds: 092),
-        Group.gt4: Duration(minutes: 1, seconds: 56, milliseconds: 220),
+        Group.gt4: Duration(minutes: 1, seconds: 56, milliseconds: 825),
       },
     ),
     Track(
@@ -101,7 +101,7 @@ class Tracks with ChangeNotifier {
       country: Country.australia,
       records: {
         Group.gt3: Duration(minutes: 2, seconds: 0, milliseconds: 272),
-        Group.gt4: Duration(minutes: 2, seconds: 13, milliseconds: 23),
+        Group.gt4: Duration(minutes: 2, seconds: 12, milliseconds: 787),
       },
     ),
     Track(
@@ -109,7 +109,7 @@ class Tracks with ChangeNotifier {
       country: Country.germany,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 53, milliseconds: 332),
-        Group.gt4: Duration(minutes: 2, seconds: 3, milliseconds: 528),
+        Group.gt4: Duration(minutes: 2, seconds: 3, milliseconds: 657),
       },
     ),
     Track(
@@ -117,7 +117,7 @@ class Tracks with ChangeNotifier {
       country: Country.unitedKingdom,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 32, milliseconds: 257),
-        Group.gt4: Duration(minutes: 1, seconds: 43, milliseconds: 95),
+        Group.gt4: Duration(minutes: 1, seconds: 41, milliseconds: 965),
       },
     ),
     Track(
@@ -125,7 +125,7 @@ class Tracks with ChangeNotifier {
       country: Country.france,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 53, milliseconds: 030),
-        Group.gt4: Duration(minutes: 2, seconds: 4, milliseconds: 650),
+        Group.gt4: Duration(minutes: 2, seconds: 4, milliseconds: 25),
       },
     ),
     Track(
@@ -133,7 +133,7 @@ class Tracks with ChangeNotifier {
       country: Country.unitedKingdom,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 56, milliseconds: 635),
-        Group.gt4: Duration(minutes: 2, seconds: 8, milliseconds: 316),
+        Group.gt4: Duration(minutes: 2, seconds: 8, milliseconds: 822),
       },
     ),
     Track(
@@ -141,7 +141,7 @@ class Tracks with ChangeNotifier {
       country: Country.unitedKingdom,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 46, milliseconds: 385),
-        Group.gt4: Duration(minutes: 1, seconds: 57, milliseconds: 699),
+        Group.gt4: Duration(minutes: 1, seconds: 57, milliseconds: 882),
       },
     ),
     Track(
@@ -149,7 +149,7 @@ class Tracks with ChangeNotifier {
       country: Country.belgium,
       records: {
         Group.gt3: Duration(minutes: 2, seconds: 15, milliseconds: 927),
-        Group.gt4: Duration(minutes: 2, seconds: 31, milliseconds: 230),
+        Group.gt4: Duration(minutes: 2, seconds: 29, milliseconds: 567),
       },
     ),
     Track(
@@ -157,7 +157,7 @@ class Tracks with ChangeNotifier {
       country: Country.japan,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 58, milliseconds: 877),
-        Group.gt4: Duration(minutes: 2, seconds: 10, milliseconds: 938),
+        Group.gt4: Duration(minutes: 2, seconds: 10, milliseconds: 192),
       },
     ),
     Track(
@@ -165,7 +165,7 @@ class Tracks with ChangeNotifier {
       country: Country.netherlands,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 34, milliseconds: 345),
-        Group.gt4: Duration(minutes: 1, seconds: 44, milliseconds: 139),
+        Group.gt4: Duration(minutes: 1, seconds: 42, milliseconds: 697),
       },
     ),
     Track(
@@ -173,7 +173,7 @@ class Tracks with ChangeNotifier {
       country: Country.belgium,
       records: {
         Group.gt3: Duration(minutes: 1, seconds: 27, milliseconds: 322),
-        Group.gt4: Duration(minutes: 1, seconds: 35, milliseconds: 742),
+        Group.gt4: Duration(minutes: 1, seconds: 35, milliseconds: 877),
       },
     ),
   ];
