@@ -28,7 +28,7 @@ class Tracks with ChangeNotifier {
       name: 'Barcelona',
       country: Country.spain,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 42, milliseconds: 627),
+        Group.gt3: Duration(minutes: 1, seconds: 42, milliseconds: 906),
         Group.gt4: Duration(minutes: 1, seconds: 53, milliseconds: 400),
       },
     ),
@@ -36,7 +36,7 @@ class Tracks with ChangeNotifier {
       name: 'Brands Hatch',
       country: Country.unitedKingdom,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 22, milliseconds: 767),
+        Group.gt3: Duration(minutes: 1, seconds: 22, milliseconds: 285),
         Group.gt4: Duration(minutes: 1, seconds: 30, milliseconds: 837),
       },
     ),
@@ -44,7 +44,7 @@ class Tracks with ChangeNotifier {
       name: 'Donington Park',
       country: Country.unitedKingdom,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 27, milliseconds: 153),
+        Group.gt3: Duration(minutes: 1, seconds: 25, milliseconds: 642),
         Group.gt4: Duration(minutes: 1, seconds: 35, milliseconds: 949),
       },
     ),
@@ -52,7 +52,7 @@ class Tracks with ChangeNotifier {
       name: 'Hungaroring',
       country: Country.hungary,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 42, milliseconds: 213),
+        Group.gt3: Duration(minutes: 1, seconds: 41, milliseconds: 895),
         Group.gt4: Duration(minutes: 1, seconds: 51, milliseconds: 729),
       },
     ),
@@ -60,7 +60,7 @@ class Tracks with ChangeNotifier {
       name: 'Imola',
       country: Country.italy,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 40, milliseconds: 128),
+        Group.gt3: Duration(minutes: 1, seconds: 40, milliseconds: 762),
         Group.gt4: Duration(minutes: 1, seconds: 49, milliseconds: 749),
       },
     ),
@@ -68,7 +68,7 @@ class Tracks with ChangeNotifier {
       name: 'Kyalami',
       country: Country.southAfrica,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 40, milliseconds: 134),
+        Group.gt3: Duration(minutes: 1, seconds: 39, milliseconds: 902),
         Group.gt4: Duration(minutes: 1, seconds: 50, milliseconds: 103),
       },
     ),
@@ -76,7 +76,7 @@ class Tracks with ChangeNotifier {
       name: 'Laguna Seca',
       country: Country.usa,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 22, milliseconds: 38),
+        Group.gt3: Duration(minutes: 1, seconds: 21, milliseconds: 202),
         Group.gt4: Duration(minutes: 1, seconds: 29, milliseconds: 670),
       },
     ),
@@ -84,7 +84,7 @@ class Tracks with ChangeNotifier {
       name: 'Misano',
       country: Country.italy,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 32, milliseconds: 700),
+        Group.gt3: Duration(minutes: 1, seconds: 32, milliseconds: 860),
         Group.gt4: Duration(minutes: 1, seconds: 41, milliseconds: 739),
       },
     ),
@@ -92,7 +92,7 @@ class Tracks with ChangeNotifier {
       name: 'Monza',
       country: Country.italy,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 46, milliseconds: 110),
+        Group.gt3: Duration(minutes: 1, seconds: 47, milliseconds: 092),
         Group.gt4: Duration(minutes: 1, seconds: 56, milliseconds: 220),
       },
     ),
@@ -100,7 +100,7 @@ class Tracks with ChangeNotifier {
       name: 'Mount Panorama',
       country: Country.australia,
       records: {
-        Group.gt3: Duration(minutes: 2, seconds: 0, milliseconds: 147),
+        Group.gt3: Duration(minutes: 2, seconds: 0, milliseconds: 272),
         Group.gt4: Duration(minutes: 2, seconds: 13, milliseconds: 23),
       },
     ),
@@ -108,7 +108,7 @@ class Tracks with ChangeNotifier {
       name: 'Nurburgring',
       country: Country.germany,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 52, milliseconds: 680),
+        Group.gt3: Duration(minutes: 1, seconds: 53, milliseconds: 332),
         Group.gt4: Duration(minutes: 2, seconds: 3, milliseconds: 528),
       },
     ),
@@ -116,7 +116,7 @@ class Tracks with ChangeNotifier {
       name: 'Oulton Park',
       country: Country.unitedKingdom,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 33, milliseconds: 828),
+        Group.gt3: Duration(minutes: 1, seconds: 32, milliseconds: 257),
         Group.gt4: Duration(minutes: 1, seconds: 43, milliseconds: 95),
       },
     ),
@@ -124,7 +124,7 @@ class Tracks with ChangeNotifier {
       name: 'Paul Ricard',
       country: Country.france,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 53, milliseconds: 739),
+        Group.gt3: Duration(minutes: 1, seconds: 53, milliseconds: 030),
         Group.gt4: Duration(minutes: 2, seconds: 4, milliseconds: 650),
       },
     ),
@@ -132,7 +132,7 @@ class Tracks with ChangeNotifier {
       name: 'Silverstone',
       country: Country.unitedKingdom,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 56, milliseconds: 826),
+        Group.gt3: Duration(minutes: 1, seconds: 56, milliseconds: 635),
         Group.gt4: Duration(minutes: 2, seconds: 8, milliseconds: 316),
       },
     ),
@@ -140,7 +140,7 @@ class Tracks with ChangeNotifier {
       name: 'Snetterton',
       country: Country.unitedKingdom,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 46, milliseconds: 869),
+        Group.gt3: Duration(minutes: 1, seconds: 46, milliseconds: 385),
         Group.gt4: Duration(minutes: 1, seconds: 57, milliseconds: 699),
       },
     ),
@@ -148,7 +148,7 @@ class Tracks with ChangeNotifier {
       name: 'Spa-Francorchamps',
       country: Country.belgium,
       records: {
-        Group.gt3: Duration(minutes: 2, seconds: 16, milliseconds: 380),
+        Group.gt3: Duration(minutes: 2, seconds: 15, milliseconds: 927),
         Group.gt4: Duration(minutes: 2, seconds: 31, milliseconds: 230),
       },
     ),
@@ -156,7 +156,7 @@ class Tracks with ChangeNotifier {
       name: 'Suzuka',
       country: Country.japan,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 58, milliseconds: 500),
+        Group.gt3: Duration(minutes: 1, seconds: 58, milliseconds: 877),
         Group.gt4: Duration(minutes: 2, seconds: 10, milliseconds: 938),
       },
     ),
@@ -164,7 +164,7 @@ class Tracks with ChangeNotifier {
       name: 'Zandvoort',
       country: Country.netherlands,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 34, milliseconds: 20),
+        Group.gt3: Duration(minutes: 1, seconds: 34, milliseconds: 345),
         Group.gt4: Duration(minutes: 1, seconds: 44, milliseconds: 139),
       },
     ),
@@ -172,7 +172,7 @@ class Tracks with ChangeNotifier {
       name: 'Zolder',
       country: Country.belgium,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 27, milliseconds: 519),
+        Group.gt3: Duration(minutes: 1, seconds: 27, milliseconds: 322),
         Group.gt4: Duration(minutes: 1, seconds: 35, milliseconds: 742),
       },
     ),
