@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/ecu_profiles.dart';
+import '../providers/cars.dart';
 import '../widgets/ecu_map_group_card.dart';
-import '../widgets/ecu_profile_dropdown.dart';
+import '../widgets/car_dropdown.dart';
 
 class EcuMapsScreen extends StatefulWidget {
   static const screenName = "ecu_maps";
-  
+
   @override
   _EcuMapsScreenState createState() => _EcuMapsScreenState();
 }
@@ -17,8 +17,8 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return Consumer<EcuProfiles>(
-      builder: (context, ecuProfiles, child) => CustomScrollView(
+    return Consumer<Cars>(
+      builder: (context, cars, child) => CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -27,7 +27,7 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
               child: EcuProfileDropdown(),
             ),
           ),
-          ecuProfiles.currentEcuProfile != null
+          cars.currentCar?.ecuMaps != null
               ? SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
@@ -35,11 +35,10 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12.0, vertical: 4),
                         child: EcuMapGroupCard(
-                            ecuMapGroup:
-                                ecuProfiles.currentEcuProfile!.groups[index]),
+                            ecuMapGroup: cars.currentCar!.ecuMaps![index]),
                       );
                     },
-                    childCount: ecuProfiles.currentEcuProfile!.groups.length,
+                    childCount: cars.currentCar!.ecuMaps!.length,
                   ),
                 )
               : SliverToBoxAdapter(

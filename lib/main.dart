@@ -5,7 +5,7 @@ import 'firebase_options.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 import 'providers/category.dart';
-import 'providers/ecu_profiles.dart';
+import 'providers/cars.dart';
 import 'providers/litres_per_lap.dart';
 import 'providers/litres_required.dart';
 import 'providers/race_length.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   final tracks = Tracks();
   final raceLength = RaceLength();
   final litresPerLap = LitresPerLap();
-  final ecuProfiles = EcuProfiles();
+  final cars = Cars();
 
   Future<void> getAllDataFromPersistence() async {
     final futures = [
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       tracks.getTrackFromPersistence(),
       raceLength.getRacelengthFromPersistence(),
       litresPerLap.getLitresPerLapFromPersistence(),
-      ecuProfiles.getEcuProfileFromPersistence(),
+      cars.getCarFromPersistence(),
     ];
     await Future.wait(futures);
   }
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           return MultiProvider(
             providers: [
               ChangeNotifierProvider.value(
-                value: ecuProfiles,
+                value: cars,
               ),
               ChangeNotifierProvider.value(
                 value: tracks,

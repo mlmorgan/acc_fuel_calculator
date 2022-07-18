@@ -1,15 +1,18 @@
-import 'group.dart';
-import '../ecu_profile/ecu_profile.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
-class Car {
+import 'group.dart';
+import '../ecu_map/ecu_map_group.dart';
+
+class Car extends AnalyticsEventItem {
   final Group category;
   final String name;
-  final EcuProfile ecuProfile;
+  final List<EcuMapGroup>? ecuMaps;
   final int wheelRotation;
 
-  const Car(
-      {required this.category,
-      required this.name,
-      required this.ecuProfile,
-      required this.wheelRotation});
+  Car({
+    required this.category,
+    required this.name,
+    this.ecuMaps,
+    required this.wheelRotation,
+  });
 }
