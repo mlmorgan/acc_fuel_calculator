@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../providers/cars.dart';
 import '../widgets/ecu_map_group_card.dart';
 import '../widgets/car_dropdown.dart';
+import '../widgets/wheel_rotation.dart';
 
 class EcuMapsScreen extends StatefulWidget {
   static const screenName = "ecu_maps";
@@ -27,23 +28,32 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
               child: EcuProfileDropdown(),
             ),
           ),
-          cars.currentCar?.ecuMaps != null
-              ? SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0, vertical: 4),
-                        child: EcuMapGroupCard(
-                            ecuMapGroup: cars.currentCar!.ecuMaps![index]),
-                      );
-                    },
-                    childCount: cars.currentCar!.ecuMaps!.length,
-                  ),
-                )
-              : SliverToBoxAdapter(
-                  child: Container(),
+          if (cars.currentCar != null)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12.0,
+                  vertical: 4,
                 ),
+                child: WheelRotation(
+                  wheelRotation: cars.currentCar!.wheelRotation,
+                ),
+              ),
+            ),
+          if (cars.currentCar?.ecuMaps != null)
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0, vertical: 4),
+                    child: EcuMapGroupCard(
+                        ecuMapGroup: cars.currentCar!.ecuMaps![index]),
+                  );
+                },
+                childCount: cars.currentCar!.ecuMaps!.length,
+              ),
+            ),
         ],
       ),
     );
