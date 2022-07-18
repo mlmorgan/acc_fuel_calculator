@@ -1,16 +1,15 @@
-import 'brand.dart';
 import 'group.dart';
+import '../ecu_profile/ecu_profile.dart';
 
 class Car {
   final Group category;
-  final Brand brand;
   final String name;
-  final int year;
+  final EcuProfile ecuProfile;
+  final int wheelRotation;
 
-  const Car({
-    required this.category,
-    required this.brand,
-    required this.name,
-    required this.year,
-  });
+  const Car(
+      {required this.category,
+      required this.name,
+      required this.ecuProfile,
+      required this.wheelRotation});
 }
