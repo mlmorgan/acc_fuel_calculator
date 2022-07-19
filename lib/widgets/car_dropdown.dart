@@ -1,5 +1,6 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:fuel_calculator/widgets/class_indicator.dart';
 import 'package:provider/provider.dart';
 
 import '../models/car/car.dart';
@@ -77,6 +78,7 @@ class CarDropdownMenuItem extends StatelessWidget {
           Expanded(
             child: Text(car.name),
           ),
+          ClassIndicator(group: car.category)
         ],
       ),
       value: car,
