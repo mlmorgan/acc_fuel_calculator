@@ -72,27 +72,28 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
                 ),
               ),
             ),
-          cars.currentCar?.ecuMaps != null
-              ? SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0, vertical: 4),
-                        child: EcuMapGroupCard(
-                            ecuMapGroup: cars.currentCar!.ecuMaps![index]),
-                      );
-                    },
-                    childCount: cars.currentCar!.ecuMaps!.length,
+          if (cars.currentCar != null)
+            cars.currentCar?.ecuMaps != null
+                ? SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0, vertical: 4),
+                          child: EcuMapGroupCard(
+                              ecuMapGroup: cars.currentCar!.ecuMaps![index]),
+                        );
+                      },
+                      childCount: cars.currentCar!.ecuMaps!.length,
+                    ),
+                  )
+                : SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 4.0),
+                      child: Text("Fixed ECU Map"),
+                    ),
                   ),
-                )
-              : SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 4.0),
-                    child: Text("Fixed ECU Map"),
-                  ),
-                ),
         ],
       ),
     );
