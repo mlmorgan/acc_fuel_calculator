@@ -7,6 +7,13 @@ class InfoDialog extends StatelessWidget {
   static const screenName = "info_dialog";
   final _analytics = FirebaseAnalytics.instance;
 
+  _launchUrl(String url) {
+    launchUrl(
+      Uri.parse(url),
+      mode: LaunchMode.externalApplication,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     _analytics.logScreenView(
@@ -28,7 +35,7 @@ class InfoDialog extends StatelessWidget {
                 style: TextStyle(color: Colors.blue),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    launch('https://raceapp.eu/LapRecords');
+                    _launchUrl('https://raceapp.eu/LapRecords');
                   },
               ),
               TextSpan(
@@ -51,7 +58,7 @@ class InfoDialog extends StatelessWidget {
                 style: TextStyle(color: Colors.blue),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    launch(
+                    _launchUrl(
                         'https://www.assettocorsa.net/forum/index.php?threads/ecu-maps-implementation.54472/');
                   },
               ),
@@ -75,7 +82,7 @@ class InfoDialog extends StatelessWidget {
                 style: TextStyle(color: Colors.blue),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    launch(
+                    _launchUrl(
                         'https://traxion.gg/how-steering-lock-is-key-to-lap-time-in-assetto-corsa-competizione/');
                   },
               ),
@@ -99,7 +106,7 @@ class InfoDialog extends StatelessWidget {
                 style: TextStyle(color: Colors.blue),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    launch('https://www.flaticon.com/authors/freepik');
+                    _launchUrl('https://www.flaticon.com/authors/freepik');
                   },
               ),
               TextSpan(
@@ -111,7 +118,7 @@ class InfoDialog extends StatelessWidget {
                 style: TextStyle(color: Colors.blue),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    launch('https://www.flaticon.com');
+                    _launchUrl('https://www.flaticon.com');
                   },
               ),
               TextSpan(
