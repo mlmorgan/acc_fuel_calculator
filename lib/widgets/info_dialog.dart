@@ -9,7 +9,6 @@ class InfoDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     _analytics.logScreenView(
       screenClass: InfoDialog.screenName,
       screenName: InfoDialog.screenName,
@@ -58,6 +57,30 @@ class InfoDialog extends StatelessWidget {
               ),
               TextSpan(
                 text: ' on the Assetto Corsa forum.',
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 8),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'Wheel rotation information from ',
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+              TextSpan(
+                text: 'Ross McGregor\'s post',
+                style: TextStyle(color: Colors.blue),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    launch(
+                        'https://traxion.gg/how-steering-lock-is-key-to-lap-time-in-assetto-corsa-competizione/');
+                  },
+              ),
+              TextSpan(
+                text: ' on Traxxion.gg.',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ],
