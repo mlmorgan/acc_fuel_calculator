@@ -11,7 +11,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     _analytics.logScreenView(
       screenClass: HomeScreen.screenName,
       screenName: HomeScreen.screenName,
@@ -25,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           bottom: TabBar(
             tabs: [
               Tab(text: 'FUEL CALCULATOR'),
-              Tab(text: 'ECU MAPS'),
+              Tab(text: 'CAR DATA'),
             ],
           ),
         ),

@@ -31,8 +31,24 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
           if (cars.currentCar != null)
             SliverToBoxAdapter(
               child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Divider(),
+                    Text(
+                      "Wheel Rotation",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          if (cars.currentCar != null)
+            SliverToBoxAdapter(
+              child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12.0,
+                  horizontal: 16.0,
                   vertical: 4,
                 ),
                 child: WheelRotation(
@@ -40,20 +56,43 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
                 ),
               ),
             ),
-          if (cars.currentCar?.ecuMaps != null)
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12.0, vertical: 4),
-                    child: EcuMapGroupCard(
-                        ecuMapGroup: cars.currentCar!.ecuMaps![index]),
-                  );
-                },
-                childCount: cars.currentCar!.ecuMaps!.length,
+          if (cars.currentCar != null)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Divider(),
+                    Text(
+                      "ECU Maps",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ],
+                ),
               ),
             ),
+          cars.currentCar?.ecuMaps != null
+              ? SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12.0, vertical: 4),
+                        child: EcuMapGroupCard(
+                            ecuMapGroup: cars.currentCar!.ecuMaps![index]),
+                      );
+                    },
+                    childCount: cars.currentCar!.ecuMaps!.length,
+                  ),
+                )
+              : SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 4.0),
+                    child: Text("Fixed ECU Map"),
+                  ),
+                ),
         ],
       ),
     );
