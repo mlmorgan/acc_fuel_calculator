@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/ecu_profile/ecu_profile.dart';
+import '../models/ecu_map/ecu_map_group.dart';
 
 class EcuMapGroupCard extends StatelessWidget {
   final EcuMapGroup ecuMapGroup;
@@ -43,8 +43,6 @@ class EcuMapGroupCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       ecuMapGroup.maps[index].description,
-                      // textAlign: TextAlign.center,
-                      // style: TextStyle(fontSize: 16),
                     ),
                   ),
                 ],

@@ -1,11 +1,12 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:fuel_calculator/widgets/class_indicator.dart';
 import 'package:provider/provider.dart';
 
 import '../models/car/car.dart';
 import '../providers/cars.dart';
 
-class CarDropdown extends StatelessWidget {
+class EcuProfileDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shortestSide = MediaQuery.of(context).size.shortestSide;
@@ -13,14 +14,24 @@ class CarDropdown extends StatelessWidget {
 
     return Consumer<Cars>(
       builder: (ctx, cars, _) => DropdownSearch<Car>(
-        // label: 'Car',
-        mode: useMobileLayout ? Mode.BOTTOM_SHEET : Mode.DIALOG,
+        selectedItem: cars.currentCar,
+        mode: useMobileLayout ? Mode.MENU : Mode.DIALOG,
         showSearchBox: true,
         searchDelay: Duration(milliseconds: 0),
         dropdownBuilderSupportsNullItem: true,
         items: cars.cars,
+        dropdownSearchDecoration: InputDecoration(
+          labelText: 'Car',
+          contentPadding: const EdgeInsets.only(
+            top: 4.0,
+            bottom: 4.0,
+            left: 12.0,
+            right: 0.0,
+          ),
+          border: const OutlineInputBorder(),
+        ),
         searchFieldProps: TextFieldProps(
-          autofocus: true
+          autofocus: true,
         ),
         dropdownBuilder: (context, Car? car) {
           return car != null
@@ -40,8 +51,7 @@ class CarDropdown extends StatelessWidget {
               : SizedBox();
         },
         itemAsString: (Car? car) {
-          if (car != null) return car.name;
-          return '';
+          return (car != null) ? car.name : '';
         },
         onChanged: (Car? newCar) {
           if (newCar != null) {
@@ -68,6 +78,7 @@ class CarDropdownMenuItem extends StatelessWidget {
           Expanded(
             child: Text(car.name),
           ),
+          ClassIndicator(group: car.category)
         ],
       ),
       value: car,

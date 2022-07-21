@@ -11,9 +11,9 @@ class Category with ChangeNotifier {
 
   Future<void> getCategoryFromPersistence() async {
     final prefs = await SharedPreferences.getInstance();
-    final rawCategory = prefs.getString(_sharedPrefKey);
-    if (rawCategory != null) {
-      switch (rawCategory) {
+    final categoryName = prefs.getString(_sharedPrefKey);
+    if (categoryName != null) {
+      switch (categoryName) {
         case 'GT3':
           await setCategory(Group.gt3);
           break;
@@ -33,11 +33,11 @@ class Category with ChangeNotifier {
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_sharedPrefKey, newCategory.value);
+    await prefs.setString(_sharedPrefKey, newCategory.name);
 
     _analytics.logEvent(
       name: "select_category",
-      parameters: {"category": newCategory.value},
+      parameters: {"category": newCategory.name},
     );
   }
 }

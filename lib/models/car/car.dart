@@ -1,16 +1,18 @@
-import 'brand.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+
 import 'group.dart';
+import '../ecu_map/ecu_map_group.dart';
 
-class Car {
+class Car extends AnalyticsEventItem {
   final Group category;
-  final Brand brand;
   final String name;
-  final int year;
+  final List<EcuMapGroup>? ecuMaps;
+  final int wheelRotation;
 
-  const Car({
+  Car({
     required this.category,
-    required this.brand,
     required this.name,
-    required this.year,
+    this.ecuMaps,
+    required this.wheelRotation,
   });
 }

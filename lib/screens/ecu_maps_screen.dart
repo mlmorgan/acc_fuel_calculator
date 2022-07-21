@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/ecu_profiles.dart';
+import '../providers/cars.dart';
 import '../widgets/ecu_map_group_card.dart';
-import '../widgets/ecu_profile_dropdown.dart';
+import '../widgets/car_dropdown.dart';
+import '../widgets/wheel_rotation.dart';
 
 class EcuMapsScreen extends StatefulWidget {
   static const screenName = "ecu_maps";
-  
+
   @override
   _EcuMapsScreenState createState() => _EcuMapsScreenState();
 }
@@ -17,8 +18,8 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return Consumer<EcuProfiles>(
-      builder: (context, ecuProfiles, child) => CustomScrollView(
+    return Consumer<Cars>(
+      builder: (context, cars, child) => CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -27,24 +28,72 @@ class _EcuMapsScreenState extends State<EcuMapsScreen>
               child: EcuProfileDropdown(),
             ),
           ),
-          ecuProfiles.currentEcuProfile != null
-              ? SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0, vertical: 4),
-                        child: EcuMapGroupCard(
-                            ecuMapGroup:
-                                ecuProfiles.currentEcuProfile!.groups[index]),
-                      );
-                    },
-                    childCount: ecuProfiles.currentEcuProfile!.groups.length,
-                  ),
-                )
-              : SliverToBoxAdapter(
-                  child: Container(),
+          if (cars.currentCar != null)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Divider(),
+                    Text(
+                      "Wheel Rotation",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ],
                 ),
+              ),
+            ),
+          if (cars.currentCar != null)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 4,
+                ),
+                child: WheelRotation(
+                  wheelRotation: cars.currentCar!.wheelRotation,
+                ),
+              ),
+            ),
+          if (cars.currentCar != null)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Divider(),
+                    Text(
+                      "ECU Maps",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          if (cars.currentCar != null)
+            cars.currentCar?.ecuMaps != null
+                ? SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0, vertical: 4),
+                          child: EcuMapGroupCard(
+                              ecuMapGroup: cars.currentCar!.ecuMaps![index]),
+                        );
+                      },
+                      childCount: cars.currentCar!.ecuMaps!.length,
+                    ),
+                  )
+                : SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 4.0),
+                      child: Text("Fixed ECU Map"),
+                    ),
+                  ),
         ],
       ),
     );
