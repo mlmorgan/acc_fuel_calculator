@@ -14,27 +14,27 @@ description: Helpful tools for ACC.
 version: 1.3.0+5
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.17.0 <3.0.0'
 
 publish_to: 'none'
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.4
-  dropdown_search: ^2.0.1
-  firebase_analytics: ^9.2.0
-  firebase_core: ^1.19.2
-  flutter_svg: ^1.0.3
-  provider: ^6.0.3
-  url_launcher: ^6.1.5
-  shared_preferences: ^2.0.15
+  cupertino_icons: 1.0.4
+  dropdown_search: 5.0.6
+  firebase_analytics: 10.1.6
+  firebase_core: 2.8.0
+  flutter_svg: 2.0.4
+  provider: 6.0.5
+  url_launcher: 6.1.10
+  shared_preferences: 2.0.20
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.9.3
-  flutter_native_splash: ^1.3.3
+  flutter_launcher_icons: 0.12.0
+  flutter_native_splash: 2.2.19
 
 flutter_icons:
   android: "ic_launcher"

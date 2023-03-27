@@ -15,43 +15,43 @@ class TrackDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shortestSide = MediaQuery.of(context).size.shortestSide;
-    final bool useMobileLayout = shortestSide < 600;
+    final useMobileLayout = shortestSide < 600;
+    final showSearchBox = true;
+    final searchDelay = Duration(milliseconds: 0);
+    final searchFieldProps = TextFieldProps(autofocus: true);
 
     return Consumer<Tracks>(
       builder: (ctx, tracks, _) => DropdownSearch<Track>(
         selectedItem: tracks.currentTrack,
-        mode: useMobileLayout ? Mode.MENU : Mode.DIALOG,
-        showSearchBox: true,
-        searchDelay: Duration(milliseconds: 0),
-        dropdownBuilderSupportsNullItem: true,
         items: tracks.tracks,
-        dropdownSearchDecoration: InputDecoration(
-          labelText: 'Track',
-          contentPadding: const EdgeInsets.only(
-            top: 4.0,
-            bottom: 4.0,
-            left: 12.0,
-            right: 0.0,
+        dropdownDecoratorProps: DropDownDecoratorProps(
+          dropdownSearchDecoration: InputDecoration(
+            labelText: 'Track',
+            contentPadding: const EdgeInsets.only(
+              top: 4.0,
+              bottom: 4.0,
+              left: 12.0,
+              right: 0.0,
+            ),
+            border: const OutlineInputBorder(),
           ),
-          border: const OutlineInputBorder(),
         ),
-        searchFieldProps: TextFieldProps(
-          autofocus: true,
-        ),
+        popupProps: useMobileLayout
+            ? PopupProps.menu(
+                showSearchBox: showSearchBox,
+                searchDelay: searchDelay,
+                searchFieldProps: searchFieldProps,
+                itemBuilder: _popUpItemBuilder)
+            : PopupProps.dialog(
+                showSearchBox: showSearchBox,
+                searchDelay: searchDelay,
+                searchFieldProps: searchFieldProps,
+                itemBuilder: _popUpItemBuilder,
+              ),
         dropdownBuilder: (context, Track? track) {
           return track != null
               ? TrackDropdownMenuItem(
                   track: track,
-                )
-              : SizedBox();
-        },
-        popupItemBuilder: (context, Track? track, isSelected) {
-          return track != null
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: TrackDropdownMenuItem(
-                    track: track,
-                  ),
                 )
               : SizedBox();
         },
@@ -66,6 +66,21 @@ class TrackDropdown extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Widget _popUpItemBuilder(
+    BuildContext context,
+    Track? track,
+    bool isSelected,
+  ) {
+    return track != null
+        ? Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: TrackDropdownMenuItem(
+              track: track,
+            ),
+          )
+        : SizedBox();
   }
 }
 
