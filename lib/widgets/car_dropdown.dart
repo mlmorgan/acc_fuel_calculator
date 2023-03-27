@@ -10,43 +10,42 @@ class EcuProfileDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shortestSide = MediaQuery.of(context).size.shortestSide;
-    final bool useMobileLayout = shortestSide < 600;
+    final useMobileLayout = shortestSide < 600;
+    final showSearchBox = true;
+    final searchDelay = Duration(milliseconds: 0);
+    final searchFieldProps = TextFieldProps(autofocus: true);
 
     return Consumer<Cars>(
       builder: (ctx, cars, _) => DropdownSearch<Car>(
         selectedItem: cars.currentCar,
-        mode: useMobileLayout ? Mode.MENU : Mode.DIALOG,
-        showSearchBox: true,
-        searchDelay: Duration(milliseconds: 0),
-        dropdownBuilderSupportsNullItem: true,
         items: cars.cars,
-        dropdownSearchDecoration: InputDecoration(
-          labelText: 'Car',
-          contentPadding: const EdgeInsets.only(
-            top: 4.0,
-            bottom: 4.0,
-            left: 12.0,
-            right: 0.0,
+        dropdownDecoratorProps: DropDownDecoratorProps(
+          dropdownSearchDecoration: InputDecoration(
+            labelText: 'Car',
+            contentPadding: const EdgeInsets.only(
+              top: 4.0,
+              bottom: 4.0,
+              left: 12.0,
+              right: 0.0,
+            ),
+            border: const OutlineInputBorder(),
           ),
-          border: const OutlineInputBorder(),
         ),
-        searchFieldProps: TextFieldProps(
-          autofocus: true,
-        ),
+        popupProps: useMobileLayout
+            ? PopupProps.menu(
+                showSearchBox: showSearchBox,
+                searchDelay: searchDelay,
+                searchFieldProps: searchFieldProps,
+                itemBuilder: _popUpItemBuilder)
+            : PopupProps.dialog(
+                showSearchBox: showSearchBox,
+                searchDelay: searchDelay,
+                searchFieldProps: searchFieldProps,
+                itemBuilder: _popUpItemBuilder),
         dropdownBuilder: (context, Car? car) {
           return car != null
               ? CarDropdownMenuItem(
                   car: car,
-                )
-              : SizedBox();
-        },
-        popupItemBuilder: (context, Car? car, isSelected) {
-          return car != null
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: CarDropdownMenuItem(
-                    car: car,
-                  ),
                 )
               : SizedBox();
         },
@@ -60,6 +59,21 @@ class EcuProfileDropdown extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Widget _popUpItemBuilder(
+    BuildContext context,
+    Car? car,
+    bool isSelected,
+  ) {
+    return car != null
+        ? Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: CarDropdownMenuItem(
+              car: car,
+            ),
+          )
+        : SizedBox();
   }
 }
 
