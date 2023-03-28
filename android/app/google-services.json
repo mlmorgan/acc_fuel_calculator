@@ -31,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "16751703389-2kdu6pvod4gdk20lq24krqojr7ieulva.apps.googleusercontent.com",
+              "client_id": "16751703389-0plcferretg9ciqm6cs3e4j8nhse2t3o.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.mlmorgan.fuel-calculator"
+                "bundle_id": "com.mlmorgan.fuelcalculator"
               }
             }
           ]
