@@ -25,6 +25,7 @@ dependencies:
   dropdown_search: 5.0.6
   firebase_analytics: 10.1.6
   firebase_core: 2.8.0
+  firebase_crashlytics: 3.0.17
   flutter_svg: 2.0.4
   provider: 6.0.5
   url_launcher: 6.1.10
@@ -35,6 +36,7 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: 0.12.0
   flutter_native_splash: 2.2.19
+  rename: 2.1.1
 
 flutter_icons:
   android: "ic_launcher"
