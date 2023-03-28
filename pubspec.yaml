@@ -25,6 +25,7 @@ dependencies:
   dropdown_search: 5.0.6
   firebase_analytics: 10.1.6
   firebase_core: 2.8.0
+  flutter_native_splash: 2.2.19
   flutter_svg: 2.0.4
   provider: 6.0.5
   url_launcher: 6.1.10
@@ -34,11 +35,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: 0.12.0
-  flutter_native_splash: 2.2.19
 
 flutter_icons:
   android: "ic_launcher"
   ios: true
+  remove_alpha_ios: true
   image_path: "images/icon/ic_launcher.png"
   adaptive_icon_background: "#05635b"
   adaptive_icon_foreground: "images/icon/splash_icon_padding.png"

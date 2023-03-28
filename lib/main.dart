@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
+import 'firebase_options.dart';
 import 'providers/category.dart';
 import 'providers/cars.dart';
 import 'providers/litres_per_lap.dart';
@@ -13,15 +14,18 @@ import 'providers/tracks.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   final analytics = FirebaseAnalytics.instance;
   analytics.logAppOpen();
-
   runApp(MyApp());
+
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
