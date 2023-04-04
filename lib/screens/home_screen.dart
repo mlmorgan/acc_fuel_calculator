@@ -37,7 +37,8 @@ class HomeScreen extends StatelessWidget {
             EcuMapsScreen(),
           ],
         ),
-        bottomNavigationBar: kIsWeb ? SizedBox.shrink() : BannerAdWidget() ,
+        bottomNavigationBar:
+            kIsWeb ? SizedBox.shrink() : SafeArea(child: BannerAdWidget()),
       ),
     );
   }
