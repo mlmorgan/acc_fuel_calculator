@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 import '../widgets/app_drawer.dart';
+import '../widgets/banner_ad.dart';
 import 'ecu_maps_screen.dart';
 import 'fuel_calculator_screen.dart';
 
@@ -35,6 +37,7 @@ class HomeScreen extends StatelessWidget {
             EcuMapsScreen(),
           ],
         ),
+        bottomNavigationBar: kIsWeb ? SizedBox.shrink() : BannerAdWidget() ,
       ),
     );
   }
