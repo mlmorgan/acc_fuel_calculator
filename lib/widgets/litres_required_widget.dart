@@ -10,7 +10,7 @@ class LitresRequiredWidget extends StatelessWidget {
       return Column(
         children: [
           Text(
-            'Race',
+            'Recommended',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           Text(
@@ -33,10 +33,13 @@ class LitresRequiredWidget extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: SmallLitresRequiredColumn(
-                  title: 'Qualifying',
-                  subtitle: 'No reserve',
-                  litres: litresRequired.minimum,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: SmallLitresRequiredColumn(
+                    title: 'Minimum',
+                    subtitle: 'No reserve',
+                    litres: litresRequired.minimum,
+                  ),
                 ),
               ),
               Container(
@@ -45,10 +48,13 @@ class LitresRequiredWidget extends StatelessWidget {
                 color: Theme.of(context).dividerColor,
               ),
               Expanded(
-                child: SmallLitresRequiredColumn(
-                  title: 'Race + Formation',
-                  subtitle: '2 laps reserve',
-                  litres: litresRequired.safe,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: SmallLitresRequiredColumn(
+                    title: 'Safe',
+                    subtitle: '2 laps reserve',
+                    litres: litresRequired.safe,
+                  ),
                 ),
               ),
             ],
@@ -78,6 +84,7 @@ class SmallLitresRequiredColumn extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.titleLarge,
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 8,
