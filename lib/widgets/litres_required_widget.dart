@@ -92,6 +92,7 @@ class SmallLitresRequiredColumn extends StatelessWidget {
         Text(
           litres.toString(),
           style: Theme.of(context).textTheme.headlineMedium,
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 8,
@@ -99,6 +100,7 @@ class SmallLitresRequiredColumn extends StatelessWidget {
         Text(
           subtitle,
           style: Theme.of(context).textTheme.bodyLarge,
+          textAlign: TextAlign.center,
         ),
       ],
     );
