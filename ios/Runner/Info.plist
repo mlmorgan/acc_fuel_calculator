@@ -44,8 +44,10 @@
 		<key>UIStatusBarHidden</key>
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-</dict>
+		<true/>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<true/>
+		<key>GADApplicationIdentifier</key>
+		<string>ca-app-pub-7640075979045354~6167438972</string>
+	</dict>
 </plist>
