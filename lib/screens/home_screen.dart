@@ -18,27 +18,30 @@ class HomeScreen extends StatelessWidget {
       screenName: HomeScreen.screenName,
     );
 
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('ACC ToolBox'),
-          bottom: TabBar(
-            tabs: [
-              Tab(text: 'FUEL CALCULATOR'),
-              Tab(text: 'CAR DATA'),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('ACC ToolBox'),
+            bottom: TabBar(
+              tabs: [
+                Tab(text: 'FUEL CALCULATOR'),
+                Tab(text: 'CAR DATA'),
+              ],
+            ),
+          ),
+          drawer: AppDrawer(),
+          body: TabBarView(
+            children: [
+              FuelCalculatorScreen(),
+              EcuMapsScreen(),
             ],
           ),
+          bottomNavigationBar:
+              kIsWeb ? SizedBox.shrink() : SafeArea(child: BannerAdWidget()),
         ),
-        drawer: AppDrawer(),
-        body: TabBarView(
-          children: [
-            FuelCalculatorScreen(),
-            EcuMapsScreen(),
-          ],
-        ),
-        bottomNavigationBar:
-            kIsWeb ? SizedBox.shrink() : SafeArea(child: BannerAdWidget()),
       ),
     );
   }
