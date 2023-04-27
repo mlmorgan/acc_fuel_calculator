@@ -12,6 +12,8 @@
 		<string>6.0</string>
 		<key>CFBundleName</key>
 		<string>fuel_calculator</string>
+		<key>CFBundleDisplayName</key>
+		<string>ACC Toolbox</string> 
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>
@@ -44,8 +46,10 @@
 		<key>UIStatusBarHidden</key>
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-</dict>
+		<true/>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<true/>
+		<key>GADApplicationIdentifier</key>
+		<string>ca-app-pub-7640075979045354~6167438972</string>
+	</dict>
 </plist>

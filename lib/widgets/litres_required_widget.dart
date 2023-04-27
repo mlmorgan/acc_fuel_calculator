@@ -11,14 +11,18 @@ class LitresRequiredWidget extends StatelessWidget {
         children: [
           Text(
             'Recommended',
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          SizedBox(
-            height: 16,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
           Text(
             litresRequired.recommended.toString(),
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
+          Text(
+            '1 lap reserve',
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          SizedBox(
+            height: 24,
           ),
           Divider(
             thickness: 1,
@@ -29,8 +33,14 @@ class LitresRequiredWidget extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: SmallLitresRequiredColumn(
-                    title: 'Minimum', litres: litresRequired.minimum),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: SmallLitresRequiredColumn(
+                    title: 'Minimum',
+                    subtitle: 'No reserve',
+                    litres: litresRequired.minimum,
+                  ),
+                ),
               ),
               Container(
                 width: 1,
@@ -38,9 +48,13 @@ class LitresRequiredWidget extends StatelessWidget {
                 color: Theme.of(context).dividerColor,
               ),
               Expanded(
-                child: SmallLitresRequiredColumn(
-                  title: 'Safe',
-                  litres: litresRequired.safe,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: SmallLitresRequiredColumn(
+                    title: 'Safe',
+                    subtitle: '2 laps reserve',
+                    litres: litresRequired.safe,
+                  ),
                 ),
               ),
             ],
@@ -53,11 +67,13 @@ class LitresRequiredWidget extends StatelessWidget {
 
 class SmallLitresRequiredColumn extends StatelessWidget {
   final String title;
+  final String subtitle;
   final int litres;
 
   const SmallLitresRequiredColumn({
     Key? key,
     required this.title,
+    required this.subtitle,
     required this.litres,
   }) : super(key: key);
 
@@ -67,11 +83,24 @@ class SmallLitresRequiredColumn extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 8,
         ),
         Text(
           litres.toString(),
-          style: Theme.of(context).textTheme.headline4,
+          style: Theme.of(context).textTheme.headlineMedium,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Text(
+          subtitle,
+          style: Theme.of(context).textTheme.bodyLarge,
+          textAlign: TextAlign.center,
         ),
       ],
     );
