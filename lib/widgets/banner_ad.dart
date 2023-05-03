@@ -12,11 +12,22 @@ class BannerAdWidget extends StatefulWidget {
 class _BannerAdWidgetState extends State<BannerAdWidget> {
   BannerAd? _anchoredAdaptiveAd;
   bool _isLoaded = false;
+  Orientation? _orientation;
+  Size? _size;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _loadAd();
+
+    final newOrientation = MediaQuery.of(context).orientation;
+    final newSize = MediaQuery.of(context).size;
+
+    if ((newOrientation != _orientation) || (newSize != _size)) {
+      _loadAd();
+    }
+
+    _orientation = newOrientation;
+    _size = newSize;
   }
 
   _loadAd() async {
