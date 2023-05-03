@@ -31,7 +31,6 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
     }
 
     _anchoredAdaptiveAd = BannerAd(
-      // TODO: replace these test ad units with your own ad unit.
       adUnitId: AdHelper.bannerAdUnitId,
       size: size,
       request: AdRequest(),
