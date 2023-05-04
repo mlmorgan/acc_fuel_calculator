@@ -212,7 +212,7 @@ class Cars with ChangeNotifier {
           ],
         ),
       ],
-      wheelRotation: 540,
+      wheelRotation: 516,
     ),
     Car(
       category: Group.gt3,
@@ -242,6 +242,29 @@ class Cars with ChangeNotifier {
         ),
       ],
       wheelRotation: 720,
+    ),
+    Car(
+      category: Group.gt3,
+      name: "Ferrari 296",
+      ecuMaps: [
+        EcuMapGroup(
+          name: 'Dry',
+          color: AppColors.dryMap,
+          maps: [
+            EcuMap(1, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(2, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(3, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(4, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(5, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(6, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(7, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(8, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(9, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+            EcuMap(10, 'Power & fuel consumption unchanged\nThrottle map linearity is still WIP'),
+          ],
+        ),
+      ],
+      wheelRotation: 1000,
     ),
     Car(
       category: Group.gt3,
@@ -541,7 +564,7 @@ class Cars with ChangeNotifier {
     ),
     Car(
       category: Group.gt3,
-      name: "Porsche 911",
+      name: "Porsche 991/2",
       ecuMaps: [
         EcuMapGroup(
           name: 'Dry',
@@ -650,7 +673,7 @@ class Cars with ChangeNotifier {
     ),
     Car(
       category: Group.gtc,
-      name: "Porsche 991II",
+      name: "Porsche 991",
       wheelRotation: 800,
     ),
     Car(
