@@ -87,7 +87,20 @@ class InfoDialog extends StatelessWidget {
                   },
               ),
               TextSpan(
-                text: ' on Traxxion.gg.',
+                text: ' on Traxxion.gg, and ',
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+              TextSpan(
+                text: 'Grant Campbell\'s post',
+                style: TextStyle(color: Colors.blue),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    _launchUrl(
+                        'https://coachdaveacademy.com/tutorials/correct-steering-locks-and-ratios-in-acc/');
+                  },
+              ),
+              TextSpan(
+                text: ' on Coach Dave Academy.',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ],
