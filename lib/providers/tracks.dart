@@ -177,6 +177,14 @@ class Tracks with ChangeNotifier {
       },
     ),
     Track(
+      name: 'Valencia',
+      country: Country.spain,
+      records: {
+        Group.gt3: Duration(minutes: 1, seconds: 29, milliseconds: 800),
+        Group.gt4: Duration(minutes: 1, seconds: 39, milliseconds: 472),
+      },
+    ),
+    Track(
       name: 'Watkins Glen',
       country: Country.usa,
       records: {
