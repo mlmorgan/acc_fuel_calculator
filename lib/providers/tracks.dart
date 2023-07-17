@@ -180,8 +180,8 @@ class Tracks with ChangeNotifier {
       name: 'Valencia',
       country: Country.spain,
       records: {
-        Group.gt3: Duration(minutes: 1, seconds: 29, milliseconds: 800),
-        Group.gt4: Duration(minutes: 1, seconds: 39, milliseconds: 472),
+        Group.gt3: Duration(minutes: 1, seconds: 29, milliseconds: 895),
+        Group.gt4: Duration(minutes: 1, seconds: 38, milliseconds: 810),
       },
     ),
     Track(

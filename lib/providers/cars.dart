@@ -264,7 +264,7 @@ class Cars with ChangeNotifier {
           ],
         ),
       ],
-      wheelRotation: 1000,
+      wheelRotation: 800,
     ),
     Car(
       category: Group.gt3,
