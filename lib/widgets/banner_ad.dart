@@ -12,15 +12,29 @@ class BannerAdWidget extends StatefulWidget {
 class _BannerAdWidgetState extends State<BannerAdWidget> {
   BannerAd? _anchoredAdaptiveAd;
   bool _isLoaded = false;
+  Orientation? _orientation;
+  Size? _size;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _loadAd();
+
+    final newOrientation = MediaQuery.of(context).orientation;
+    final newSize = MediaQuery.of(context).size;
+
+    if ((newOrientation != _orientation) || (newSize != _size)) {
+      _loadAd();
+    }
+
+    _orientation = newOrientation;
+    _size = newSize;
   }
 
-  Future<void> _loadAd() async {
+  _loadAd() async {
+    _isLoaded = false;
     _anchoredAdaptiveAd?.dispose();
+    _anchoredAdaptiveAd = null;
+
     // Get an AnchoredAdaptiveBannerAdSize before loading the ad.
     final AnchoredAdaptiveBannerAdSize? size =
         await AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
@@ -30,25 +44,36 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
       return;
     }
 
-    _anchoredAdaptiveAd = BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId,
-      size: size,
-      request: AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (Ad ad) {
-          setState(() {
-            // When the ad is loaded, get the ad size and use it to set
-            // the height of the ad container.
-            _anchoredAdaptiveAd = ad as BannerAd;
-            _isLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (Ad ad, LoadAdError error) {
-          ad.dispose();
-        },
-      ),
-    );
-    return _anchoredAdaptiveAd!.load();
+    final bannerAdUnitId = AdHelper.bannerAdUnitId;
+
+    if (bannerAdUnitId == null) {
+      return;
+    } else {
+      _anchoredAdaptiveAd = BannerAd(
+        adUnitId: bannerAdUnitId,
+        size: size,
+        request: AdRequest(),
+        listener: BannerAdListener(
+          onAdLoaded: (Ad ad) {
+            setState(() {
+              // When the ad is loaded, get the ad size and use it to set
+              // the height of the ad container.
+              _anchoredAdaptiveAd = ad as BannerAd;
+              _isLoaded = true;
+            });
+          },
+          onAdFailedToLoad: (Ad ad, LoadAdError error) {
+            setState(() {
+              _anchoredAdaptiveAd = null;
+              _isLoaded = false;
+            });
+            ad.dispose();
+          },
+        ),
+      );
+
+      _anchoredAdaptiveAd?.load();
+    }
   }
 
   @override
