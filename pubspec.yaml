@@ -28,6 +28,7 @@ dependencies:
   firebase_crashlytics: 3.0.17
   flutter_svg: 2.0.4
   google_mobile_ads: 3.0.0
+  intl: 0.18.1
   provider: 6.0.5
   url_launcher: 6.1.10
   shared_preferences: 2.0.20
