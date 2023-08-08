@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/litres_per_lap.dart';
+import '../util/decimal_input_formatter.dart';
 
 class LitresPerLapField extends StatelessWidget {
   final _textFieldController = TextEditingController();
@@ -23,6 +24,7 @@ class LitresPerLapField extends StatelessWidget {
                   contentPadding: EdgeInsets.symmetric(horizontal: 8),
                   labelText: 'Litres per lap'),
               controller: _textFieldController,
+              inputFormatters: [DecimalInputFormatter()],
               keyboardType:
                   TextInputType.numberWithOptions(decimal: true, signed: false),
               onChanged: (newValue) {
